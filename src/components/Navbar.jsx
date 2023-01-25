@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-// import {FcAbout} from 'react-icons/fc'
 import { RxCross1 } from "react-icons/rx";
 import { Link,useNavigate } from "react-router-dom";
-import logo from "../assets/logo.jfif";
 import {useDispatch, useSelector} from 'react-redux'
 import { logout } from "../actions/user";
+import logo from "../assets/Logo.jpeg";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -20,21 +19,21 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav className="p-3 border-gray-200 rounded bg-slate-200">
+      <nav className="p-3 border-gray-200  bg-indigo-500  hover:bg-black">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <Link to={"/"} className="flex items-center hover:bg-gray-100 ">
+          <Link to={"/"} className="flex items-center rounde">
             <img
               src={logo}
               className="h-6 mr-3 sm:h-10 rounded-full"
               alt="logo"
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-xl font-bold whitespace-nowrap text-white border-y-4">
               Rhythm
             </span>
           </Link>
           <button
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100"
+            className="inline-flex items-center p-2 ml-3 text-sm text-white-500 rounded-lg bg-indigo-500 hover:bg-yellow-400"
           >
             {menu ? (
               <RxCross1 className="w-6 h-6" onClick={() => setMenu(false)} />

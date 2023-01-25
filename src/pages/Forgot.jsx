@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux'
 import { forgotPassword } from '../actions/user';
-import logo from '../assets/logo.jfif'
 import Loader from '../components/Loader';
+import logo from "../assets/Logo.jpeg";
 
 const Forgot = () => {
   const dispatch=useDispatch();

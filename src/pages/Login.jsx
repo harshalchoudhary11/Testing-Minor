@@ -3,8 +3,8 @@ import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import { login } from '../actions/user';
-import logo from '../assets/logo.jfif';
 import Loader from '../components/Loader'
+import logo from "../assets/Logo.jpeg";
 
 const Login = () => {
     const dispatch=useDispatch();
