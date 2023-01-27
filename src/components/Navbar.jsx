@@ -19,7 +19,7 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav className="p-3 border-gray-200  bg-indigo-500  hover:bg-black">
+      <nav className="p-3 border-gray-200  bg-indigo-500 ">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link to={"/"} className="flex items-center rounde">
             <img
@@ -27,7 +27,7 @@ const Navbar = () => {
               className="h-6 mr-3 sm:h-10 rounded-full"
               alt="logo"
             />
-            <span className="self-center text-xl font-bold whitespace-nowrap text-white border-y-4">
+            <span className="self-center text-xl font-bold whitespace-nowrap text-white">
               Rhythm
             </span>
           </Link>
