@@ -19,7 +19,7 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav className="p-3 border-gray-200  bg-indigo-500 ">
+      <nav className="p-3 border-gray-200  bg-black">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link to={"/"} className="flex items-center rounde">
             <img
