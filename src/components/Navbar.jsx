@@ -5,6 +5,9 @@ import { Link,useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from 'react-redux'
 import { logout } from "../actions/user";
 import logo from "../assets/Logo.jpeg";
+import {BsPerson, BsSearch} from 'react-icons/bs'
+import {GoPerson} from 'react-icons/go'
+import {MdLibraryMusic,MdOutlineLogout,MdDashboardCustomize} from 'react-icons/md'
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -19,7 +22,7 @@ const Navbar = () => {
   }
   return (
     <div>
-      <nav className="p-3 border-gray-200  bg-indigo-500 ">
+      <nav className="p-3 border-gray-200  bg-black">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link to={"/"} className="flex items-center rounde">
             <img
@@ -57,7 +60,8 @@ const Navbar = () => {
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   onClick={()=> setMenu(false)}
                 >
-                  <span className="ml-3">Dashboard</span>
+                  <span className="flex-1 ml-3 whitespace-nowrap">Dashboard</span>
+                  <MdDashboardCustomize/>
                 </Link>
               </li>
 
@@ -68,6 +72,7 @@ const Navbar = () => {
                   onClick={()=> setMenu(false)}
                 >
                   <span className="flex-1 ml-3 whitespace-nowrap">About</span>
+                  <BsPerson/>
                 </Link>
               </li>
 
@@ -78,6 +83,7 @@ const Navbar = () => {
                   onClick={()=> setMenu(false)}
                 >
                   <span className="flex-1 ml-3 whitespace-nowrap">Search</span>
+                  <BsSearch/>
                 </Link>
               </li>
 
@@ -88,6 +94,7 @@ const Navbar = () => {
                   onClick={()=> setMenu(false)}
                 >
                   <span className="flex-1 ml-3 whitespace-nowrap">Library</span>
+                  <MdLibraryMusic/>
                 </Link>
               </li>
 
@@ -100,6 +107,7 @@ const Navbar = () => {
                       onClick={logoutHandler}
                     >
                       <span className="flex-1 ml-3 whitespace-nowrap">Logout</span>
+                      <MdOutlineLogout/>
                     </Link>
                   </li>
                 ):
