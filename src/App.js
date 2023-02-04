@@ -12,10 +12,12 @@ import Dashboard from './pages/Dashboard';
 import Library from './pages/Library';
 import { useEffect } from 'react';
 import {loadUser} from './actions/user'
-
 import { useDispatch, useSelector } from 'react-redux';
 import Forgot from './pages/Forgot';
 import Reset from './pages/Reset';
+import Error from './pages/Error';
+import Footer from './components/Footer';
+
 
 
 function App() {
@@ -42,8 +44,11 @@ function App() {
         <Route path='/dashboard' element={isAuthenticated ?<Dashboard />:<Login />} />
         <Route path='/library' element={isAuthenticated ?<Library />: <Login />} />
         <Route path='/forgot' element={<Forgot />} />
+        <Route path='/*' element={<Error/>} />
         <Route path='/resetPassword/:resetToken' element={<Reset />} />
+        
       </Routes>
+      {/* <Footer /> */}
     </>
   );
 }

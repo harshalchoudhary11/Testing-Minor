@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
-import { Link,useNavigate } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from 'react-redux'
 import { logout } from "../actions/user";
 import logo from "../assets/Logo.jpeg";
@@ -20,11 +20,18 @@ const Navbar = () => {
     setMenu(false);
     navigate('/login')
   }
+  const navNavLinkStyle = ({isActive}) => {
+    return{
+    textDecoration: isActive ? "none" :"",
+    backgroundColor: isActive ? "Green" : "white",
+    // fontSize :"30px"
+   };
+  };
   return (
     <div>
       <nav className="p-3 border-gray-200  bg-black">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <Link to={"/"} className="flex items-center rounde">
+          <NavLink  to={"/"} className="flex items-center rounde">
             <img
               src={logo}
               className="h-6 mr-3 sm:h-10 rounded-full"
@@ -33,7 +40,7 @@ const Navbar = () => {
             <span className="self-center text-xl font-bold whitespace-nowrap text-white">
               Rhythm
             </span>
-          </Link>
+          </NavLink>
           <button
             type="button"
             className="inline-flex items-center p-2 ml-3 text-sm text-white-500 rounded-lg bg-indigo-500 hover:bg-yellow-400"
@@ -55,81 +62,81 @@ const Navbar = () => {
           <div className="px-3 py-4 overflow-y-auto rounded bg-gray-50 dark:bg-gray-800">
             <ul className="space-y-2">
               <li>
-                <Link
+                <NavLink style={navNavLinkStyle}
                   to={'/dashboard'}
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   onClick={()=> setMenu(false)}
                 >
                   <span className="flex-1 ml-3 whitespace-nowrap">Dashboard</span>
                   <MdDashboardCustomize/>
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink style={navNavLinkStyle}
                   to={'/about'}
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   onClick={()=> setMenu(false)}
                 >
                   <span className="flex-1 ml-3 whitespace-nowrap">About</span>
                   <BsPerson/>
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink style={navNavLinkStyle}
                   to={'/search'}
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   onClick={()=> setMenu(false)}
                 >
                   <span className="flex-1 ml-3 whitespace-nowrap">Search</span>
                   <BsSearch/>
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink style={navNavLinkStyle}
                   to={'/library'}
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   onClick={()=> setMenu(false)}
                 >
                   <span className="flex-1 ml-3 whitespace-nowrap">Library</span>
                   <MdLibraryMusic/>
-                </Link>
+                </NavLink>
               </li>
 
               {
                 isAuthenticated?(
                   <li>
-                    <Link
+                    <NavLink style={navNavLinkStyle}
                       to={'/login'}
                       className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                       onClick={logoutHandler}
                     >
                       <span className="flex-1 ml-3 whitespace-nowrap">Logout</span>
                       <MdOutlineLogout/>
-                    </Link>
+                    </NavLink>
                   </li>
                 ):
                 (
                   <>
                     <li>
-                      <Link
+                      <NavLink style={navNavLinkStyle}
                         to={'/login'}
                         className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                         onClick={()=> setMenu(false)}
                       >
                         <span className="flex-1 ml-3 whitespace-nowrap">Login</span>
-                      </Link>
+                      </NavLink>
                     </li>
                     <li>
-                      <Link
+                      <NavLink style={navNavLinkStyle}
                         to={'/signup'}
                         className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                         onClick={()=> setMenu(false)}
                       >
                         <span className="flex-1 ml-3 whitespace-nowrap">Signup</span>
-                      </Link>
+                      </NavLink>
                     </li>
                 </>
                 )

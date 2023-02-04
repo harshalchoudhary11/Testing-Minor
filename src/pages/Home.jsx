@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
+import Webcam from 'react-webcam'
+
 
 const Home = () => {
   const { message, error, loading } = useSelector(state => state.user)
@@ -22,11 +24,18 @@ const Home = () => {
 
 
   return (
+    
     loading ? <Loader classNameName="h-screen" /> :
-        <div className="w-full ">
-          <div className="h-10 bg-red-light"></div>
-          <div className="flex items-center justify-center h-64  bg-red-lightest">
-            <div className="bg-pink-100 shadow-lg rounded-lg  ">
+     
+    
+        <div className=''>
+        {/* <div className=''> < Webcam className='rounded-full h-50 w-40 ml-auto mr-auto align-item centre border-slate-500 bg-red-700'/></div> */}
+        <div className="w-full border 2px bg-red-500 " >
+          
+          <div className="h-10 bg-red-light">Home</div>
+          
+          {/* <div className="flex items-center justify-center h-64  bg-red-lightest">
+            <div className="bg-pink-100 shadow-lg rounded-lg w-full  absolute bottom-1 ">
               <div className="flex">
                 <div>
                   <img className="w-full h-min rounded hidden md:block" src="https://tailwindcss.com/img/card-top.jpg" alt="Album Pic" />
@@ -34,8 +43,8 @@ const Home = () => {
                 <div className="w-full p-8">
                   <div className="flex justify-between">
                     <div>
-                      <h3 className="text-2xl text-grey-darkest font-medium">A Sky Full of Stars</h3>
-                      <p className="text-sm text-grey mt-1">Ghost Stories</p>
+                      <h3 className="text-2xl text-grey-darkest font-medium">Levitating</h3>
+                      <p className="text-sm text-grey mt-1">Dua Lipa</p>
                     </div>
                     <div className="text-red-lighter">
                       <svg className="w-6 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z" /></svg>
@@ -74,8 +83,9 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div> */}
           </div>
-        </div>
+        // </div>
   )
 }
 
