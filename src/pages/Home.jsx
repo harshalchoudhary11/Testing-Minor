@@ -3,7 +3,11 @@ import { useEffect } from 'react'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
-// import Webcam from 'react-webcam'
+import {BsPlayCircle} from 'react-icons/bs'
+import { BiSkipPreviousCircle , BiSkipNextCircle} from 'react-icons/bi'
+import c7 from '../assets/7.jpg'
+
+import Camera from '../components/Camera'
 
 
 const Home = () => {
@@ -29,9 +33,12 @@ const Home = () => {
 
 
       <div className=''>
+        {/* <Camera/> */}
 
-         {/* <div className=''> < Webcam className='rounded-full h-50 w-40 ml-auto mr-auto align-item centre border-slate-500 bg-red-700'/></div> */}
-        <div className="w-screen h-64 " >
+         {/* <div className=''> < Camera className='rounded-full h-50 w-40 ml-auto mr-auto align-item centre border-slate-500 bg-red-700'
+      
+         /></div>  */}
+        {/* <div className="w-screen h-64 " >
 
           <div class=" my-11 grid max-w-8xl grid-cols-12 gap-4 p-1 bg-amber-200 ">
 
@@ -39,7 +46,7 @@ const Home = () => {
 
             </div>
             <div class=" col-span-12 rounded-lg border border-gray-500 bg-gray-200 p-44 sm:col-span-8">
-             {/* <div className="flex items-center justify-center h-64  bg-red-lightest">
+              <div className="flex items-center justify-center h-64  bg-red-lightest">
             <div className="bg-pink-100 shadow-lg rounded-lg w-full  absolute bottom-1 ">
               <div className="flex">
                 <div>
@@ -88,7 +95,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>  */}
+          </div>  
             </div>
             <div class="col-span-12 rounded-lg border border-gray-500 bg-gray-200 p-32 sm:col-span-4">
 
@@ -96,7 +103,26 @@ const Home = () => {
             <div class="footer col-span-12 rounded-lg border border-gray-800 bg-sky-700 p-6">
             </div>
           </div>
+        </div> */}
+        <div className='bg-red-700 w-4/5 h-4/5 mt-4 ml-32'>
+           
         </div>
+        <div className=" w-full h-[100px] bg-[black]  absolute bottom-0 flex justify-center items-center text-[white] flex-col">
+  <input
+    type="range"
+    name="range"
+    className="@apply w-[80vw] cursor-pointer"
+    min={0}
+    defaultValue={0}
+    max={100}
+  />
+  <div className=" mt-2 flex ">
+  <BiSkipPreviousCircle className='mr-2 w-11 h-11'/>
+  <BsPlayCircle className='mr-2 w-11 h-11'/>
+  <BiSkipNextCircle className='mr-2 w-11 h-11'/>
+    
+  </div>
+</div>
       </div>
   )
 }
