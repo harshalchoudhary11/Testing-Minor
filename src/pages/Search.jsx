@@ -20,7 +20,7 @@ const Search = () => {
     loading ? <Loader className="h-screen" /> :
     <div className='bg-amber-100'>
       
-<form class="flex items-center pt-4">   
+   <form class="flex items-center pt-4 sticky">   
     <label for="simple-search" class="sr-only">Search</label>
     <div class="relative w-full ml-80">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">

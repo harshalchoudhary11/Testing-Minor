@@ -29,21 +29,11 @@ const Navbar = () => {
   };
   return (
     <div>
-      <nav className="p-3 border-gray-200  bg-black">
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <NavLink  to={"/"} className="flex items-center rounde">
-            <img
-              src={logo}
-              className="h-6 mr-3 sm:h-10 rounded-full"
-              alt="logo"
-            />
-            <span className="self-center text-xl font-bold whitespace-nowrap text-white">
-              Rhythm
-            </span>
-          </NavLink>
-          <button
+      <nav className="p-3 border-gray-200  bg-black ">
+        <div className="container flex flex-wrap items-center  gap-6/12  mx-auto">
+        <button
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm text-white-500 rounded-lg bg-indigo-500 hover:bg-yellow-400"
+            className="inline-flex items-center p-2 ml-3 text-sm text-white-500 rounded-lg bg-indigo-500 hover:bg-yellow-400 float-left"
           >
             {menu ? (
               <RxCross1 className="w-6 h-6" onClick={() => setMenu(false)} />
@@ -54,6 +44,17 @@ const Navbar = () => {
               />
             )}
           </button>
+          <NavLink  to={"/"} className="flex  rounde ml-40pc">
+            <img
+              src={logo}
+              className="h-6 mr-3 sm:h-10 rounded-full"
+              alt="logo"
+            />
+            <span className="self-center text-xl font-bold whitespace-nowrap text-white">
+              Rhythm
+            </span>
+          </NavLink>
+          
         </div>
       </nav>
 
